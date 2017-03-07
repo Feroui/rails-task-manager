@@ -1,2 +1,13 @@
 <h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<br>
+<form action="/tasks" method="post">
+  <label for="name">Name: </label>
+  <input type="text" name="task[name]" id="name">
+
+  <label for="description">Description: </label>
+  <input type="text" name="task[description]" id="description">
+
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <input type="submit">
+</form>
